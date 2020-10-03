@@ -25,12 +25,13 @@ class MoveError(Error):
 
 
 class TSP_ACO(object):
-    def __init__(self, cities, metric):
+    def __init__(self, cities, cities_nums, metric):
         """
         TSP object, to be solved using ACO
 
         Attributes:
             cities -- numpy array of 2D-coordinates of cities (N x 2)
+            cities_nums -- numpy array of numbers(names) of cities (N x 1)
             metric -- (lambda) function for assigning weight at each edge ij
                 i.e. metric(i, j) -> [0, inf)
             distances -- defaultdict of distances of all the edges
@@ -41,9 +42,10 @@ class TSP_ACO(object):
         # Initialize
         self.cities = cities
         self.N = len(cities)
+        self.cities_nums = cities_nums
 
         self.metric = metric
-        self.distances = defaultdict(lambda: 0)
+        self.distances = defaultdict(lambda: 0.0)
         self.pheromones = defaultdict(lambda: 0.0)
         for i in range(self.N):
             for j in range(i):
@@ -77,7 +79,7 @@ class TSP_ACO(object):
         """
         V = len(vertices)
         total_len = 0
-        for i in range(V):
+        for i in range(V - 1):
             total_len += self.distances[(vertices[i], vertices[i + 1])]
         if cycle:
             total_len += self.distances[(vertices[V - 1], 0)]
@@ -97,7 +99,8 @@ class TSP_ACO(object):
         :return: optimal_cost, optimal_path
         """
         aco = ACO(T, num_ants, a, b, rho, Q)
-        return aco.optimize(self)
+        cost, path = aco.optimize(self)
+        return cost, self.cities_nums[path]
 
 
 class ACO(object):
@@ -211,21 +214,22 @@ class Ant(object):
         # Calculate the denominator
         denom = 0
         for i in range(self.tsp_aco.N):
-            if i in self.not_allowed:
-                continue
-            denom += self.prob_weight(self.current_vertex, i, a, b)
+            if i not in self.not_allowed:
+                denom += self.prob_weight(self.current_vertex, i, a, b)
 
         for i in range(self.tsp_aco.N):
-            if i in self.not_allowed:
-                prob_list[i] = 0
-                continue
-            prob_list[i] = self.prob_weight(self.current_vertex, i, a, b) / denom
+            if i not in self.not_allowed:
+                prob_list[i] = self.prob_weight(self.current_vertex, i, a, b) / denom
+
+        return prob_list
 
     def move(self) -> None:
         if len(self.not_allowed) == self.tsp_aco.N:
             raise MoveError("This poor ant can't move to anywhere!")
         # Choose the next vertex, based on the discrete probability distribution
         next_vertex = np.random.choice(self.total_vertices, p=self.transition_prob())
+        if next_vertex in self.not_allowed:
+            raise MoveError("Why is this ant moving to unauthorized vertex??")
         # Update appropriate quantities
         self.not_allowed.add(next_vertex)
         self.total_cost += self.tsp_aco.distances[(self.current_vertex, next_vertex)]
@@ -250,3 +254,4 @@ class Ant(object):
             i = self.total_path[tmp]
             j = self.total_path[tmp + 1]
             self.pheromone_deposit[(i, j)] = self.aco.Q / self.total_cost
+            self.pheromone_deposit[(j, i)] = self.aco.Q / self.total_cost
