@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../:\Dropbox (kaist)\KAIST\Courses\ML, DL, Stat\CS454 (20Fall)\Assignment 2 (TSP Solver)\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

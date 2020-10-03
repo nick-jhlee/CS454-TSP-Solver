@@ -1,0 +1,64 @@
+\begin{thebibliography}{10}
+
+\bibitem{GSPR20}
+X.~Gao, R.~K. Saha, M.~R. Prasad, and A.~Roychoudhury, ``{Fuzz Testing based
+  Data Augmentation to Improve Robustness of Deep Neural Networks},'' in {\em
+  42nd International Conference on Software Engineering (ICSE '20)}, May 23-29,
+  2020, Seoul, Republic of Korea, 2020.
+
+\bibitem{ETTSM19}
+L.~Engstrom, B.~Tran, D.~Tsipras, L.~Schmidt, and A.~Madry, ``Exploring the
+  landscape of spatial robustness,'' in {\em Proceedings of the 36th
+  International Conference on Machine Learning, {ICML} 2019, 9-15 June 2019,
+  Long Beach, California, {USA}}, vol.~97 of {\em Proceedings of Machine
+  Learning Research}, pp.~1802--1811, 2019.
+
+\bibitem{He19}
+H.~He, ``{The State of Machine Learning Frameworks in 2019}.''
+  \url{https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/
+  }, 2019.
+
+\bibitem{YWH19}
+F.~Yang, Z.~Wang, and C.~Heinze-Deml, ``Invariance-inducing regularization
+  using worst-case transformations suffices to boost accuracy and spatial
+  robustness,'' in {\em Advances in Neural Information Processing Systems 32},
+  pp.~14785--14796, Curran Associates, Inc., 2019.
+
+\bibitem{ZWSPD13}
+R.~S. Zemel, Y.~Wu, K.~Swersky, T.~Pitassi, and C.~Dwork, ``Learning fair
+  representations,'' in {\em Proceedings of the 30th International Conference
+  on Machine Learning, {ICML} 2013, Atlanta, GA, USA, 16-21 June 2013}, vol.~28
+  of {\em {JMLR} Workshop and Conference Proceedings}, pp.~325--333, 2013.
+
+\bibitem{ZVGG17}
+M.~B. Zafar, I.~Valera, M.~Gomez{-}Rodriguez, and K.~P. Gummadi, ``Fairness
+  constraints: Mechanisms for fair classification,'' in {\em Proceedings of the
+  20th International Conference on Artificial Intelligence and Statistics,
+  {AISTATS} 2017, 20-22 April 2017, Fort Lauderdale, FL, {USA}}, vol.~54 of
+  {\em Proceedings of Machine Learning Research}, pp.~962--970, 2017.
+
+\bibitem{HSNL18}
+T.~B. Hashimoto, M.~Srivastava, H.~Namkoong, and P.~Liang, ``Fairness without
+  demographics in repeated loss minimization,'' in {\em Proceedings of the 35th
+  International Conference on Machine Learning, {ICML} 2018,
+  Stockholmsm{\"{a}}ssan, Stockholm, Sweden, July 10-15, 2018}, vol.~80 of {\em
+  Proceedings of Machine Learning Research}, pp.~1934--1943, 2018.
+
+\bibitem{IN18}
+V.~Iosifidis and E.~Ntoutsi, ``Dealing with bias via data augmentation in
+  supervised learning scenarios,'' in {\em International Workshop on Bias in
+  Information, Algorithms, and Systems (BIAS)} (J.~Bates, P.~D. Clough,
+  R.~Jäschke, and J.~Otterbacher, eds.), no.~2103 in CEUR Workshop
+  Proceedings, (Aachen), pp.~24--29, 2018.
+
+\bibitem{Sch01}
+L.~M. Schmitt, ``Theory of genetic algorithms,'' {\em Theoretical Computer
+  Science}, vol.~259, no.~1, pp.~1 -- 61, 2001.
+
+\bibitem{MMSTV18}
+A.~Madry, A.~Makelov, L.~Schmidt, D.~Tsipras, and A.~Vladu, ``{Towards Deep
+  Learning Models Resistant to Adversarial Attacks},'' in {\em 6th
+  International Conference on Learning Representations, {ICLR} 2018, Vancouver,
+  BC, Canada, April 30 - May 3, 2018, Conference Track Proceedings}, 2018.
+
+\end{thebibliography}
