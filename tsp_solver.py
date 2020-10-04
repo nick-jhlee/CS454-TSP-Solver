@@ -6,10 +6,11 @@ Created on 2020/10/02
 """
 
 # Include progress bar...
+# Fix parallel process (pool2 inside pool1...)
+#
 
 import argparse
 import csv
-import time
 import timeit
 
 import matplotlib.pyplot as plt
@@ -53,13 +54,14 @@ parser = argparse.ArgumentParser(description='Symmetric (2D Euclidean) Metric TS
                                              'no duplicate coordinates!!!')
 parser.add_argument('filename', type=str, nargs=1, help='Name of the .tsp file to solve')
 parser.add_argument('sol_filename', type=str, nargs='?', help='Name of the .opt.tour solution file')
+parser.add_argument("population", metavar='p', type=int, nargs='?', help="Set the number of ants to be used for ACO"
+                                                                         "(if clustering is used, this only applies to "
+                                                                         "intracluster ACOs), Default is 10")
 parser.add_argument("-c", "--clustering", help="Enable clustering-based optimization", action="store_true")
-parser.add_argument("-par", "--parallel", help="Enable parallel computing", action="store_true")
 parser.add_argument("-t", "--tuning", help="Enable PSO-based hyperparameter tuning of ACO", action="store_true")
 parser.add_argument("-plot", "--plotting", help="Enable plotting", action="store_true")
 parser.add_argument("-v", "--verbose", help="Enable verbose", action="store_true")
-
-# parser.add_argument('solver', type=str, nargs=1, help='Type of solver to be used')
+parser.add_argument("-par", "--parallel", help="Enable parallel computing", action="store_true")
 
 # Process the input file
 args = parser.parse_args()
@@ -69,11 +71,16 @@ parallel = args.parallel
 tuning = args.tuning
 plotting = args.plotting
 verbose = args.verbose
+num_ants = args.population
 
 if parallel:
-    print("Parallel computing option has not been implemented, yet")
-    print("Proceeding without parallel option...\n")
-parallel = False
+    print("Current implementation of parallel computing option is for intracluster ACOs")
+    print("(Windows users may experience errors. In that case, please turn off the parallel computing option)\n")
+
+if tuning:
+    print("Hyperparameter tuning option has not been implemented, yet")
+    print("Proceeding without tuning option...\n")
+tuning = False
 
 """
 (assumed) .tsp format:
@@ -97,8 +104,8 @@ with open(filename) as raw_tsp:
         if str(line) == 'EOF':
             break
         if i == 0:
-            line = line.strip()
-            tsp_name = line[0]
+            line = line.split()
+            tsp_name = line[-1].strip()
         if i > 5:
             tmp = [float(item.strip()) for item in line.split()]
             cities.append(tmp[1:])
@@ -110,7 +117,7 @@ cities_nums = np.array(list(range(N)))
 tsp = TSP_ACO(cities, cities_nums, metric)
 
 print("number of cities: %d" % N)
-print("Solving %s" % tsp_name)
+print("Solving %s.tsp" % tsp_name)
 
 # Actual Solver
 start_time = timeit.default_timer()
@@ -201,12 +208,12 @@ def combine_path_cycle(path, cycle):
 
 def combine_clusters(cycles):
     """
-    Helper function #3 for combine_clusters()
     (Locally optimally) combine all cycles
 
     :param: cycles: list of list of vertices, each consisting a Hamiltonian cycle
     :return: a list of vertices, consisting of the wanted solution
     """
+    num_clusters = len(cycles)
     # Combine cluster 0 and 1
     max_dist = math.inf
     x, y = None, None
@@ -226,22 +233,29 @@ def combine_clusters(cycles):
 
 
 if clustering:
+    if verbose:
+        print("\n Step 1: Clustering")
     """
      Step 1: Clustering the cities
      Use KMeans from sklearn.cluster
-     Search through all possible number of clusters (>1)
+     Search for the optimal size of the clusters
+     (Conjecture: it suffices to search for the cluster size up to 20% of the number of cities)
      """
-    final_costs = [None for i in range(N - 1)]
-    final_paths = [None for i in range(N - 1)]
+    max_clusters = math.ceil(N * 0.2)
+    final_clusters = list(range(2, max_clusters + 1))
+    final_paths = [None for i in range(0, max_clusters - 1)]
+    final_costs = [None for i in range(0, max_clusters - 1)]
     C = 1000  # number of maximum restarts for the k-means algorithm
 
-    for n_clusters in range(2, N + 1):
-        # print(n_clusters)
+    for n_clusters in range(2, max_clusters + 1):
+        if verbose:
+            print("Solving with %d clusters" % n_clusters)
         # Handles empty clusters by restarting several times!
         # If same problem persists after C times, then pass
         cluster_iter = 0
         num_labels = 0
         success = False
+
         for iter in range(C):
             kmeans = KMeans(n_clusters=n_clusters).fit(cities)
             cluster_labels = kmeans.labels_
@@ -251,7 +265,7 @@ if clustering:
                 break
             iter += 1
         if not success:
-            continue
+            EmptyClusterError("There is an empty cluster...")
 
         # if plotting:
         # Plot the points and the clusters
@@ -266,20 +280,26 @@ if clustering:
             clustered_cities.append(cities[idx])
             clustered_cities_nums.append(cities_nums[idx])
 
-        # Step 2: Paralell intracluster TSP solver for each cluster
-        # for cities in clustered_cities:
-        T = 1000000
-        num_ants = 20
-        a0, b0 = 0.9, 1.5
+        # Step 2: Parallel intracluster TSP solver for each cluster
+        # (Initial) Hyperparameters:
+        T = 100
+        if not num_ants:
+            num_ants = 10
+        a0, b0 = 1, 1.1
         rho0 = 0.1
 
         if parallel:
-            ## FIX!
             def wrapper_solve_TSP(i):
+                """
+                Wrapper function to be used at parallel process
+                :param i:
+                :return:
+                """
                 return solve_TSP(np.array(clustered_cities[i]), clustered_cities_nums[i], T, num_ants, a0, b0, rho0,
                                  tuning)
-            pool = Pool()
-            costs, cycles = zip(*pool.map(wrapper_solve_TSP, range(num_clusters)))
+            pool2 = Pool()
+            costs, cycles = zip(*pool2.map(wrapper_solve_TSP, range(num_clusters)))
+            pool2.close()
             cycles = [item.tolist() for item in cycles]
         else:
             costs = [None for i in range(num_clusters)]
@@ -306,7 +326,7 @@ if clustering:
         # Step 3: Intercluster TSP solver (median-based)
         median_cities = [np.mean(cluster, axis=0) for cluster in clustered_cities]
         median_cities_nums = np.array(list(range(-1, num_clusters - 1)))
-        T = 100
+        T = 50
         num_ants = 5
         a0, b0 = 1, 1
         rho0 = 0.1
@@ -331,25 +351,100 @@ if clustering:
         # Combine the clusters
         final_paths[n_clusters - 2] = combine_clusters(cycles)
         final_costs[n_clusters - 2] = tsp.length_path(final_paths[n_clusters - 2])
+
+    # if parallel:
+    #     # NOT WORKING!
+    #     pool1 = Pool()
+    #     final_costs, final_paths = zip(*pool1.map(big_wrapper, range(2, max_clusters + 1)))
+    #     pool1.close()
+    # else:
+
     # Find the best solution
     opt_cost = min(final_costs)
-    final_path = final_paths[final_costs.index(opt_cost)]
+    best_idx = final_costs.index(opt_cost)
+    final_path = final_paths[best_idx]
+    final_cluster = final_clusters[best_idx]
+    print("Done searching through all possible clusters!")
+    print("Optimal number of clusters: %f" % final_cluster)
+
     if plotting:
         fig1 = plt.figure(1)
-        plt.plot(np.array(range(2, N+1)), final_costs, marker=".")
+        plt.plot(np.array(range(2, max_clusters + 1)), final_costs, marker=".")
         plt.title("final cost vs number of clusters")
-        plt.xticks(np.arange(2, N + 1, step=1))
+        plt.xticks(np.arange(2, max_clusters + 1, step=1))
         plt.xlabel('Number of clusters')
         plt.ylabel('(Sub-)optimal cost')
-        # fig1.show()
+
 else:
-    T = 5000
-    num_ants = 10
+    T = 1000
+    if not num_ants:
+        num_ants = 10
     a0, b0 = 1, 1
     rho0 = 0.1
     final_cost, final_path = solve_TSP(cities, cities_nums, T, num_ants, a0, b0, rho0, tuning)
 
 # Step 6: 3-Opt Heuristic
+if verbose:
+    print("Executing 3-Opt Algorithm...")
+
+
+# From https://en.wikipedia.org/wiki/3-opt
+def distance(x, y):
+    """
+    Helper function for
+    :param x:
+    :param y:
+    :return:
+    """
+    return metric(cities[x], cities[y])
+
+
+def reverse_segment_if_better(tour, i, j, k):
+    """If reversing tour[i:j] would make the tour shorter, then do it."""
+    # Given tour [...A-B...C-D...E-F...]
+    A, B, C, D, E, F = tour[i - 1], tour[i], tour[j - 1], tour[j], tour[k - 1], tour[k % len(tour)]
+    d0 = distance(A, B) + distance(C, D) + distance(E, F)
+    d1 = distance(A, C) + distance(B, D) + distance(E, F)
+    d2 = distance(A, B) + distance(C, E) + distance(D, F)
+    d3 = distance(A, D) + distance(E, B) + distance(C, F)
+    d4 = distance(F, B) + distance(C, D) + distance(E, A)
+
+    if d0 > d1:
+        tour[i:j] = reversed(tour[i:j])
+        return -d0 + d1
+    elif d0 > d2:
+        tour[j:k] = reversed(tour[j:k])
+        return -d0 + d2
+    elif d0 > d4:
+        tour[i:k] = reversed(tour[i:k])
+        return -d0 + d4
+    elif d0 > d3:
+        tmp = tour[j:k] + tour[i:j]
+        tour[i:k] = tmp
+        return -d0 + d3
+    return 0
+
+
+def all_segments(n: int):
+    """Generate all segments combinations"""
+    return ((i, j, k)
+            for i in range(n)
+            for j in range(i + 2, n)
+            for k in range(j + 2, n + (i > 0)))
+
+
+def three_opt(tour):
+    """Iterative improvement based on 3 exchange."""
+    while True:
+        delta = 0
+        for (a, b, c) in all_segments(len(tour)):
+            delta += reverse_segment_if_better(tour, a, b, c)
+        if delta >= 0:
+            break
+    return tour
+
+
+final_path = three_opt(final_path)
 
 running_time = timeit.default_timer() - start_time
 
@@ -359,37 +454,39 @@ final_cost = tsp.length_path(final_path)
 # Step 5: Export the solution to .csv, and print the resulting cost
 final_path = (np.array(final_path) + 1).tolist()
 export_csv(final_path)
-print("Took %f sec" % running_time)
+if verbose:
+    print("Took %f sec" % running_time)
 print("Total length of the computed Hamiltonian Cycle: %f" % final_cost)
 
-if args.sol_filename is not None:
-    sol_filename = args.sol_filename
-    """
-    (assumed) .opt.tour format:
-    
-    NAME : ~~~~~~~~
-    COMMENT : Optimal tour for pr76 (108159)
-    TYPE : TOUR
-    DIMENSION : (int)
-    TOUR_SECTION
-    num1
-    num2
-    ...
-    """
-    opt_path = []  # ordered list of cities, in which the optimal Hamiltonian cycle is achieved
-    with open(sol_filename) as opt_tsp:
-        i = 0
-        for line in opt_tsp:
-            if str(line) == '-1' or str(line) == '-1\n':
-                break
-            if i > 4:
-                tmp = line.split()
-                opt_path.append(int(tmp[0].strip()))
-            i += 1
-    # print(set(opt_path) - set(final_path))
-    opt_cost = tsp.length_path(np.array(opt_path) - 1)  # Optimal cost
-    opt_ratio = 100 * ((final_cost / opt_cost) - 1)  # How close our algorithm is to the optimal cost
-    print("This algorithm is optimal up to %f%% of the optimal cost" % opt_ratio)
+if verbose:
+    if args.sol_filename is not None:
+        sol_filename = args.sol_filename
+        """
+        (assumed) .opt.tour format:
+        
+        NAME : ~~~~~~~~
+        TYPE : TOUR
+        COMMENT : Optimal tour for pr76 (108159)
+        DIMENSION : (int)
+        TOUR_SECTION
+        num1
+        num2
+        ...
+        """
+        opt_path = []  # ordered list of cities, in which the optimal Hamiltonian cycle is achieved
+        with open(sol_filename) as opt_tsp:
+            i = 0
+            for line in opt_tsp:
+                if str(line) == '-1' or str(line) == '-1\n':
+                    break
+                if i > 4:
+                    tmp = line.split()
+                    opt_path.append(int(tmp[0].strip()))
+                i += 1
+        # print(set(opt_path) - set(final_path))
+        opt_cost = tsp.length_path(np.array(opt_path) - 1)  # Optimal cost
+        opt_ratio = 100 * ((final_cost / opt_cost) - 1)  # How close our algorithm is to the optimal cost
+        print("This algorithm is optimal up to %f%% of the optimal cost" % opt_ratio)
 
 if plotting:
     plt.show()

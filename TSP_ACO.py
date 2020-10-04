@@ -156,8 +156,8 @@ class ACO(object):
             # Update the pheromones of the TSP_ACO object
             self.update_pheromone(tsp_aco, ants)
 
-            # Return the optimal cost, and the corresponding optimal path
-            return self.optimal_cost, self.optimal_path
+        # Return the optimal cost, and the corresponding optimal path
+        return self.optimal_cost, self.optimal_path
 
 
 class Ant(object):

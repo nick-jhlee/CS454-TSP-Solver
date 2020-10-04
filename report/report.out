@@ -1,2 +1,11 @@
 \BOOKMARK [1][-]{section.1}{Background}{}% 1
 \BOOKMARK [1][-]{section.2}{Algorithm}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{k-Means Clustering}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Conjecture}{subsection.2.1}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Intracluster ACOs}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{Intercluster ACO}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.4}{Combine the local solutions into a global solutions}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{3-Opt Algorithm}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{Experiments}{}% 9
+\BOOKMARK [1][-]{section.4}{Implementation}{}% 10
+\BOOKMARK [1][-]{section.5}{Usage}{}% 11
