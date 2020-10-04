@@ -1,27 +1,22 @@
-import numpy as np
 from collections import defaultdict
+# from tuning_PSO import *
 import math
 import random
-from tuning_PSO import *
+import numpy as np
+from Errors import *
 
 
-class Error(Exception):
-    """
-    Base class for exceptions
-    """
-    pass
-
-
-class MoveError(Error):
-    """
-    Exception raised for errors in the input.
-
-    Attributes:
-        message -- explanation of the error
-    """
-
-    def __init__(self, message):
-        self.message = message
+class ReadOnlyDict(dict):
+    def __readonly__(self, *args, **kwargs):
+        raise RuntimeError("Cannot modify ReadOnlyDict")
+    __setitem__ = __readonly__
+    __delitem__ = __readonly__
+    pop = __readonly__
+    popitem = __readonly__
+    clear = __readonly__
+    update = __readonly__
+    setdefault = __readonly__
+    del __readonly__
 
 
 class TSP_ACO(object):
@@ -31,7 +26,9 @@ class TSP_ACO(object):
 
         Attributes:
             cities -- numpy array of 2D-coordinates of cities (N x 2)
+                i.e. np.array([[x_0, y_0], [x_1, y_1], ..., [x_{N-1}, y_{N-1}]])
             cities_nums -- numpy array of numbers(names) of cities (N x 1)
+                i.e. np.array([n_0, n_1, ..., n_{N-1}])
             metric -- (lambda) function for assigning weight at each edge ij
                 i.e. metric(i, j) -> [0, inf)
             distances -- defaultdict of distances of all the edges
@@ -45,9 +42,11 @@ class TSP_ACO(object):
         self.cities_nums = cities_nums
 
         self.metric = metric
-        self.distances = defaultdict(lambda: 0.0)
-        self.pheromones = defaultdict(lambda: 0.0)
+        self.distances = dict()
+        self.pheromones = dict()
         for i in range(self.N):
+            self.distances[(i, i)] = 0
+            self.pheromones[(i, i)] = 0
             for j in range(i):
                 # Calculate the distances
                 self.distances[(i, j)] = self.metric(self.cities[i], self.cities[j])
@@ -55,6 +54,8 @@ class TSP_ACO(object):
                 # Initialize the pheromones
                 self.pheromones[(i, j)] = 1 / (self.N * 10)
                 self.pheromones[(j, i)] = 1 / (self.N * 10)
+
+        self.distances = ReadOnlyDict(self.distances)
 
     def initialize_Q(self):
         """
@@ -64,7 +65,7 @@ class TSP_ACO(object):
         Q = 0
         for i in range(self.N - 1):
             Q += self.distances[(i, i + 1)]
-        Q += self.distances[(self.N - 1, self.N)]
+        Q += self.distances[(self.N - 1, 0)]
         return Q
 
     def length_path(self, vertices, cycle=True):
@@ -138,7 +139,7 @@ class ACO(object):
 
     def optimize(self, tsp_aco: TSP_ACO):
         """
-        Perform the optimization
+        Perform the optimization, including hyperparameter tuning
         :return: None
         """
         for t in range(self.T):
@@ -169,8 +170,10 @@ class Ant(object):
             aco -- ACO object that this ant is currently attached to
             pheromone_deposit -- dict containing the pheromone deposit (by this ant) at each edge ij
                 i.e. pheromone_deposit[{i,j}] -> [0, inf)
-            current -- current vertex
-
+            current_vertex -- current vertex
+            not_allowed -- list of vertices that this ant is not allowed to go to at time t+1
+            total_cost -- total distance that the ant has traveled
+            total_path -- ordered list of vertices that the ant has traveled
         """
         self.tsp_aco = tsp_aco
         self.aco = aco
@@ -199,7 +202,11 @@ class Ant(object):
 
         :return: unnormalized probability that this ant moves from j to i
         """
-        return ((self.tsp_aco.pheromones[(j, i)]) ** a) * ((self.tsp_aco.distances[(j, i)]) ** b)
+        d = self.tsp_aco.distances[(j, i)]
+        if d != 0.0:
+            return ((self.tsp_aco.pheromones[(j, i)]) ** a) * ((1 / d) ** b)
+        else:
+            return 0.0
 
     def transition_prob(self):
         """
@@ -207,12 +214,13 @@ class Ant(object):
         :return: list 'prob_list' of probabilities such that
             l[i] = prob that this ant moves from self.current_vertex to i
         """
-        prob_list = [0 for i in range(self.tsp_aco.N)]
+        prob_list = [0.0 for i in range(self.tsp_aco.N)]
         a = self.aco.a
         b = self.aco.b
 
         # Calculate the denominator
-        denom = 0
+        # print("\nNEW START")
+        denom = 0.0
         for i in range(self.tsp_aco.N):
             if i not in self.not_allowed:
                 denom += self.prob_weight(self.current_vertex, i, a, b)
