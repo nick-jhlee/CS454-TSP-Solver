@@ -3,44 +3,46 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: report.aux
 The style file: ieeetr.bst
 Database file #1: bibliography.bib
+Warning--can't use both author and editor fields in Ma09
 You've used 10 entries,
             1876 wiz_defined-function locations,
-            556 strings with 6288 characters,
-and the built_in function-call counts, 3309 in all, are:
-= -- 306
-> -- 134
+            558 strings with 5756 characters,
+and the built_in function-call counts, 3388 in all, are:
+= -- 337
+> -- 111
 < -- 0
-+ -- 48
-- -- 38
-* -- 256
-:= -- 446
-add.period$ -- 10
++ -- 40
+- -- 30
+* -- 233
+:= -- 450
+add.period$ -- 12
 call.type$ -- 10
-change.case$ -- 10
+change.case$ -- 8
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 175
-empty$ -- 333
-format.name$ -- 38
-if$ -- 804
+cite$ -- 11
+duplicate$ -- 182
+empty$ -- 334
+format.name$ -- 30
+if$ -- 848
 int.to.chr$ -- 0
 int.to.str$ -- 10
-missing$ -- 9
-newline$ -- 33
-num.names$ -- 12
-pop$ -- 55
+missing$ -- 12
+newline$ -- 35
+num.names$ -- 14
+pop$ -- 44
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 117
+skip$ -- 134
 stack$ -- 0
-substring$ -- 239
-swap$ -- 73
+substring$ -- 268
+swap$ -- 83
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 31
+warning$ -- 1
+while$ -- 34
 width$ -- 12
-write$ -- 99
+write$ -- 104
+(There was 1 warning)

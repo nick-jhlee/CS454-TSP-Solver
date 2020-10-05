@@ -1,64 +1,60 @@
 \begin{thebibliography}{10}
 
-\bibitem{GSPR20}
-X.~Gao, R.~K. Saha, M.~R. Prasad, and A.~Roychoudhury, ``{Fuzz Testing based
-  Data Augmentation to Improve Robustness of Deep Neural Networks},'' in {\em
-  42nd International Conference on Software Engineering (ICSE '20)}, May 23-29,
-  2020, Seoul, Republic of Korea, 2020.
+\bibitem{La92}
+G.~Laporte, ``The traveling salesman problem: An overview of exact and
+  approximate algorithms,'' {\em European Journal of Operational Research},
+  vol.~59, no.~2, pp.~231 -- 247, 1992.
 
-\bibitem{ETTSM19}
-L.~Engstrom, B.~Tran, D.~Tsipras, L.~Schmidt, and A.~Madry, ``Exploring the
-  landscape of spatial robustness,'' in {\em Proceedings of the 36th
-  International Conference on Machine Learning, {ICML} 2019, 9-15 June 2019,
-  Long Beach, California, {USA}}, vol.~97 of {\em Proceedings of Machine
-  Learning Research}, pp.~1802--1811, 2019.
+\bibitem{Ma09}
+Y.~Marinakis, {\em Heuristic and metaheuristic algorithms for the traveling
+  salesman problemHeuristic and Metaheuristic Algorithms for the Traveling
+  Salesman Problem}, pp.~1498--1506.
+\newblock Boston, MA: Springer US, 2009.
 
-\bibitem{He19}
-H.~He, ``{The State of Machine Learning Frameworks in 2019}.''
-  \url{https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/
-  }, 2019.
+\bibitem{ABCC07}
+D.~L. Applegate, R.~E. Bixby, V.~Chvatal, and W.~J. Cook, {\em The Traveling
+  Salesman Problem: A Computational Study (Princeton Series in Applied
+  Mathematics)}.
+\newblock USA: Princeton University Press, 2007.
 
-\bibitem{YWH19}
-F.~Yang, Z.~Wang, and C.~Heinze-Deml, ``Invariance-inducing regularization
-  using worst-case transformations suffices to boost accuracy and spatial
-  robustness,'' in {\em Advances in Neural Information Processing Systems 32},
-  pp.~14785--14796, Curran Associates, Inc., 2019.
+\bibitem{CT19}
+K.~Chaudhari and A.~Thakkar, ``Travelling salesman problem: An empirical
+  comparison between aco, pso, abc, fa and ga,'' in {\em Emerging Research in
+  Computing, Information, Communication and Applications} (N.~R. Shetty, L.~M.
+  Patnaik, H.~C. Nagaraj, P.~N. Hamsavath, and N.~Nalini, eds.), (Singapore),
+  pp.~397--405, Springer Singapore, 2019.
 
-\bibitem{ZWSPD13}
-R.~S. Zemel, Y.~Wu, K.~Swersky, T.~Pitassi, and C.~Dwork, ``Learning fair
-  representations,'' in {\em Proceedings of the 30th International Conference
-  on Machine Learning, {ICML} 2013, Atlanta, GA, USA, 16-21 June 2013}, vol.~28
-  of {\em {JMLR} Workshop and Conference Proceedings}, pp.~325--333, 2013.
+\bibitem{Rei91}
+G.~Reinelt, ``Tsplib—a traveling salesman problem library,'' {\em INFORMS
+  Journal on Computing}, vol.~3, no.~4, pp.~376--384, 1991.
 
-\bibitem{ZVGG17}
-M.~B. Zafar, I.~Valera, M.~Gomez{-}Rodriguez, and K.~P. Gummadi, ``Fairness
-  constraints: Mechanisms for fair classification,'' in {\em Proceedings of the
-  20th International Conference on Artificial Intelligence and Statistics,
-  {AISTATS} 2017, 20-22 April 2017, Fort Lauderdale, FL, {USA}}, vol.~54 of
-  {\em Proceedings of Machine Learning Research}, pp.~962--970, 2017.
+\bibitem{RS12}
+K.~{Rocki} and R.~{Suda}, ``Accelerating 2-opt and 3-opt local search using gpu
+  in the travelling salesman problem,'' in {\em 2012 International Conference
+  on High Performance Computing Simulation (HPCS)}, pp.~489--495, 2012.
 
-\bibitem{HSNL18}
-T.~B. Hashimoto, M.~Srivastava, H.~Namkoong, and P.~Liang, ``Fairness without
-  demographics in repeated loss minimization,'' in {\em Proceedings of the 35th
-  International Conference on Machine Learning, {ICML} 2018,
-  Stockholmsm{\"{a}}ssan, Stockholm, Sweden, July 10-15, 2018}, vol.~80 of {\em
-  Proceedings of Machine Learning Research}, pp.~1934--1943, 2018.
+\bibitem{QC18}
+W.-B. Qiao and J.-C. Cr{\'e}put, ``Massive 2-opt and 3-opt moves with high
+  performance gpu local search to large-scale traveling salesman problem,'' in
+  {\em Learning and Intelligent Optimization} (R.~Battiti, M.~Brunato,
+  I.~Kotsireas, and P.~M. Pardalos, eds.), (Cham), pp.~82--97, Springer
+  International Publishing, 2019.
 
-\bibitem{IN18}
-V.~Iosifidis and E.~Ntoutsi, ``Dealing with bias via data augmentation in
-  supervised learning scenarios,'' in {\em International Workshop on Bias in
-  Information, Algorithms, and Systems (BIAS)} (J.~Bates, P.~D. Clough,
-  R.~Jäschke, and J.~Otterbacher, eds.), no.~2103 in CEUR Workshop
-  Proceedings, (Aachen), pp.~24--29, 2018.
+\bibitem{GC05}
+D.~Gaertner and K.~Clark, ``On optimal parameters for ant colony optimization
+  algorithms,'' in {\em Proceedings of the International Conference on
+  Artificial Intelligence 2005}, pp.~83--89, CSREA Press, 2005.
 
-\bibitem{Sch01}
-L.~M. Schmitt, ``Theory of genetic algorithms,'' {\em Theoretical Computer
-  Science}, vol.~259, no.~1, pp.~1 -- 61, 2001.
+\bibitem{DHY10}
+Z.~{Dan}, H.~{Hongyan}, and H.~{Yu}, ``The optimal selection of the parameters
+  for the ant colony algorithm with small-perturbation,'' in {\em 2010
+  International Conference on Computing, Control and Industrial Engineering},
+  vol.~2, pp.~16--19, 2010.
 
-\bibitem{MMSTV18}
-A.~Madry, A.~Makelov, L.~Schmidt, D.~Tsipras, and A.~Vladu, ``{Towards Deep
-  Learning Models Resistant to Adversarial Attacks},'' in {\em 6th
-  International Conference on Learning Representations, {ICLR} 2018, Vancouver,
-  BC, Canada, April 30 - May 3, 2018, Conference Track Proceedings}, 2018.
+\bibitem{MBK15}
+M.~Mahi, Ömer Kaan~Baykan, and H.~Kodaz, ``A new hybrid method based on
+  particle swarm optimization, ant colony optimization and 3-opt algorithms for
+  traveling salesman problem,'' {\em Applied Soft Computing}, vol.~30, pp.~484
+  -- 490, 2015.
 
 \end{thebibliography}

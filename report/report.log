@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.15)  5 OCT 2020 02:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.12.15)  5 OCT 2020 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -950,114 +950,159 @@ Package: arydshln 2018/09/26 v1.74
 \adl@everyvbox=\toks46
 \adl@LTpagetotal=\dimen281
 )
-(c:/texlive/2018/texmf-dist/tex/latex/subfig/subfig.sty
-Package: subfig 2005/06/28 ver: 1.3 subfig package
-
-(c:/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
-
-(c:/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen282
-\captionmargin@=\dimen283
-\captionwidth=\dimen284
-\caption@tempdima=\dimen285
-\caption@indent=\dimen286
-\caption@parindent=\dimen287
-\caption@hangindent=\dimen288
-)
-\c@caption@flags=\count320
-\c@ContinuedFloat=\count321
-Package caption Info: hyperref package is loaded.
-)
-\c@KVtest=\count322
-\sf@farskip=\skip85
-\sf@captopadj=\dimen289
-\sf@capskip=\skip86
-\sf@nearskip=\skip87
-\c@subfigure=\count323
-\c@subfigure@save=\count324
-\c@lofdepth=\count325
-\c@subtable=\count326
-\c@subtable@save=\count327
-\c@lotdepth=\count328
-\sf@top=\skip88
-\sf@bottom=\skip89
-)
 (c:/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box66
 \UL@hyphenbox=\box67
-\UL@skip=\skip90
+\UL@skip=\skip85
 \UL@hook=\toks47
-\UL@height=\dimen290
-\UL@pe=\count329
-\UL@pixel=\dimen291
+\UL@height=\dimen282
+\UL@pe=\count320
+\UL@pixel=\dimen283
 \ULC@box=\box68
 Package: ulem 2012/05/18
-\ULdepth=\dimen292
+\ULdepth=\dimen284
 )
-\c@theorem=\count330
-\c@corollary=\count331
+(c:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen285
+\lightrulewidth=\dimen286
+\cmidrulewidth=\dimen287
+\belowrulesep=\dimen288
+\belowbottomsep=\dimen289
+\aboverulesep=\dimen290
+\abovetopsep=\dimen291
+\cmidrulesep=\dimen292
+\cmidrulekern=\dimen293
+\defaultaddspace=\dimen294
+\@cmidla=\count321
+\@cmidlb=\count322
+\@aboverulesep=\dimen295
+\@belowrulesep=\dimen296
+\@thisruleclass=\count323
+\@lastruleclass=\count324
+\@thisrulewidth=\dimen297
+)
+(c:/texlive/2018/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
 
-(c:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2018/04/16 v5.8 Page Geometry
-\Gm@cnth=\count332
-\Gm@cntv=\count333
-\c@Gm@tempcnt=\count334
-\Gm@bindingoffset=\dimen293
-\Gm@wd@mp=\dimen294
-\Gm@odd@mp=\dimen295
-\Gm@even@mp=\dimen296
-\Gm@layoutwidth=\dimen297
-\Gm@layoutheight=\dimen298
-\Gm@layouthoffset=\dimen299
-\Gm@layoutvoffset=\dimen300
-\Gm@dimlist=\toks48
+(c:/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/11/13 v2.4j Tabular extension package (FMi)
+\col@sep=\dimen298
+\ar@mcellbox=\box69
+\extrarowheight=\dimen299
+\NC@list=\toks48
+\extratabsurround=\skip86
+\backup@length=\skip87
+\ar@cellbox=\box70
 )
-\c@claim=\count335
+\TX@col@width=\dimen300
+\TX@old@table=\dimen301
+\TX@old@col=\dimen302
+\TX@target=\dimen303
+\TX@delta=\dimen304
+\TX@cols=\count325
+\TX@ftn=\toks49
+)
+(c:/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip88
+\subfigcapskip=\skip89
+\subfigcaptopadj=\dimen305
+\subfigbottomskip=\skip90
+\subfigcapmargin=\dimen306
+\subfiglabelskip=\skip91
+\c@subfigure=\count326
+\c@lofdepth=\count327
+\c@subtable=\count328
+\c@lotdepth=\count329
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(c:/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip92
+\subfig@bottom=\skip93
+)
+(c:/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count330
+\float@exts=\toks50
+\float@box=\box71
+\@float@everytoks=\toks51
+\@floatcapt=\box72
+)
+(c:/texlive/2018/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has section divisions on input line 50.
+
+
+Package tocbibind Note: Using section or other style headings.
+
+)
+\c@theorem=\count331
+\c@conjecture=\count332
+\c@corollary=\count333
+ (c:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+\Gm@cnth=\count334
+\Gm@cntv=\count335
+\c@Gm@tempcnt=\count336
+\Gm@bindingoffset=\dimen307
+\Gm@wd@mp=\dimen308
+\Gm@odd@mp=\dimen309
+\Gm@even@mp=\dimen310
+\Gm@layoutwidth=\dimen311
+\Gm@layoutheight=\dimen312
+\Gm@layouthoffset=\dimen313
+\Gm@layoutvoffset=\dimen314
+\Gm@dimlist=\toks52
+)
+\c@claim=\count337
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 66.
 LaTeX Font Info:    Try loading font information for LUC+nanummj on input line 
-38.
+66.
 
 (c:/texlive/2018/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
 
 ABD: EveryShipout initializing macros
 (c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count336
-\scratchdimen=\dimen301
-\scratchbox=\box69
-\nofMPsegments=\count337
-\nofMParguments=\count338
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count339
-\MPscratchDim=\dimen302
-\MPnumerator=\count340
-\makeMPintoPDFobject=\count341
-\everyMPtoPDFconversion=\toks50
+\scratchcounter=\count338
+\scratchdimen=\dimen315
+\scratchbox=\box73
+\nofMPsegments=\count339
+\nofMParguments=\count340
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count341
+\MPscratchDim=\dimen316
+\MPnumerator=\count342
+\makeMPintoPDFobject=\count343
+\everyMPtoPDFconversion=\toks54
 ) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1075,8 +1120,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box70
-Package hyperref Info: Link coloring OFF on input line 38.
+\AtBeginShipoutBox=\box74
+Package hyperref Info: Link coloring OFF on input line 66.
 
 (c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1084,19 +1129,16 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count342
+\c@section@level=\count344
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
-LaTeX Info: Redefining \nameref on input line 38.
+LaTeX Info: Redefining \ref on input line 66.
+LaTeX Info: Redefining \pageref on input line 66.
+LaTeX Info: Redefining \nameref on input line 66.
 
 (./report.out) (./report.out)
 \@outlinefile=\write4
 \openout4 = `report.out'.
 
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: subfig package v1.3 is loaded.
-Package caption Info: End \AtBeginDocument code.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1132,93 +1174,213 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 41.
+LaTeX Font Info:    Try loading font information for U+msa on input line 69.
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 41.
+LaTeX Font Info:    Try loading font information for U+msb on input line 69.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 41.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 69.
 
 (c:/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
- (./report.toc)
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
+ (./report.toc [1
+
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write5
 \openout5 = `report.toc'.
 
- [1
-
-{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<fig1.png, id=31, 436.63126pt x 138.5175pt>
-File: fig1.png Graphic file (type png)
-<use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 50.
-(pdftex.def)             Requested size: 222.5038pt x 70.58803pt.
-<fig3.png, id=33, 489.83pt x 353.32pt>
-File: fig3.png Graphic file (type png)
-<use fig3.png>
-Package pdftex.def Info: fig3.png  used on input line 55.
-(pdftex.def)             Requested size: 222.5038pt x 160.49129pt.
- [2 <./fig1.png> <./fig3.png>] (./report.bbl
-Underfull \hbox (badness 5133) in paragraph at lines 17--20
-[]\OT1/cmr/m/n/10 H. He, ``The State of Ma-chine Learn-ing Frame-works in 2019.
-'' []$\OT1/cmtt/m/n/10 https : / / thegradient . pub /
- []
+ [2]
+<Figures/fig1.jpg, id=194, 963.6pt x 472.76625pt>
+File: Figures/fig1.jpg Graphic file (type jpg)
+<use Figures/fig1.jpg>
+Package pdftex.def Info: Figures/fig1.jpg  used on input line 109.
+(pdftex.def)             Requested size: 483.69687pt x 237.31313pt.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 122.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--20
-\OT1/cmtt/m/n/10 state-[]of-[]ml-[]frameworks-[]2019-[]pytorch-[]dominates-[]re
-search-[]tensorflow-[]dominates-[]industry/$[]\OT1/cmr/m/n/10 ,
- []
+(c:/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}
+) has been already used, duplicate ignored
 
-) [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.124 
+       <./Figures/fig1.jpg>]
+<Figures/fig2.jpg, id=214, 963.6pt x 461.725pt>
+File: Figures/fig2.jpg Graphic file (type jpg)
+<use Figures/fig2.jpg>
+Package pdftex.def Info: Figures/fig2.jpg  used on input line 151.
+(pdftex.def)             Requested size: 483.69687pt x 231.77078pt.
+<Figures/fig3.jpg, id=215, 963.6pt x 488.82625pt>
+File: Figures/fig3.jpg Graphic file (type jpg)
+<use Figures/fig3.jpg>
+Package pdftex.def Info: Figures/fig3.jpg  used on input line 157.
+(pdftex.def)             Requested size: 483.69687pt x 245.37471pt.
+<Figures/fig4.jpg, id=216, 963.6pt x 497.86pt>
+File: Figures/fig4.jpg Graphic file (type jpg)
+<use Figures/fig4.jpg>
+Package pdftex.def Info: Figures/fig4.jpg  used on input line 164.
+(pdftex.def)             Requested size: 483.69687pt x 249.90936pt.
+ [4] [5pdfTeX warning (ext4): destination with the same identifier (name{figure
+.2}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.191 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.191 
+       <./Figures/fig2.jpg> <./Figures/fig3.jpg>]
+<Plots/eil51.png, id=244, 462.528pt x 346.896pt>
+File: Plots/eil51.png Graphic file (type png)
+<use Plots/eil51.png>
+Package pdftex.def Info: Plots/eil51.png  used on input line 203.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+<Plots/berlin52.png, id=246, 462.528pt x 346.896pt>
+File: Plots/berlin52.png Graphic file (type png)
+<use Plots/berlin52.png>
+Package pdftex.def Info: Plots/berlin52.png  used on input line 207.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+<Plots/st70.png, id=247, 462.528pt x 346.896pt>
+File: Plots/st70.png Graphic file (type png)
+<use Plots/st70.png>
+Package pdftex.def Info: Plots/st70.png  used on input line 210.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+<Plots/eil76.png, id=248, 462.528pt x 346.896pt>
+File: Plots/eil76.png Graphic file (type png)
+<use Plots/eil76.png>
+Package pdftex.def Info: Plots/eil76.png  used on input line 214.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+ has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.219 \end{center}
+                   <./Figures/fig4.jpg>]
+<Plots/pr76.png, id=256, 462.528pt x 346.896pt>
+File: Plots/pr76.png Graphic file (type png)
+<use Plots/pr76.png>
+Package pdftex.def Info: Plots/pr76.png  used on input line 225.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+<Plots/kroa100.png, id=257, 462.528pt x 346.896pt>
+File: Plots/kroa100.png Graphic file (type png)
+<use Plots/kroa100.png>
+Package pdftex.def Info: Plots/kroa100.png  used on input line 229.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+<Plots/kroc100.png, id=258, 462.528pt x 346.896pt>
+File: Plots/kroc100.png Graphic file (type png)
+<use Plots/kroc100.png>
+Package pdftex.def Info: Plots/kroc100.png  used on input line 232.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+<Plots/krod100.png, id=259, 462.528pt x 346.896pt>
+File: Plots/krod100.png Graphic file (type png)
+<use Plots/krod100.png>
+Package pdftex.def Info: Plots/krod100.png  used on input line 236.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+<Plots/lin105.png, id=260, 462.528pt x 346.896pt>
+File: Plots/lin105.png Graphic file (type png)
+<use Plots/lin105.png>
+Package pdftex.def Info: Plots/lin105.png  used on input line 239.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+<Plots/ch130.png, id=261, 462.528pt x 346.896pt>
+File: Plots/ch130.png Graphic file (type png)
+<use Plots/ch130.png>
+Package pdftex.def Info: Plots/ch130.png  used on input line 243.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+<Plots/ch150.png, id=262, 462.528pt x 346.896pt>
+File: Plots/ch150.png Graphic file (type png)
+<use Plots/ch150.png>
+Package pdftex.def Info: Plots/ch150.png  used on input line 246.
+(pdftex.def)             Requested size: 193.47578pt x 145.10777pt.
+ [7pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+ has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.255 \end{center}
+                   <./Plots/eil51.png> <./Plots/berlin52.png> <./Plots/st70.png
+> <./Plots/eil76.png>] [8pdfTeX warning (ext4): destination with the same ident
+ifier (name{figure.6}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.255 \end{center}
+                   <./Plots/pr76.png> <./Plots/kroa100.png> <./Plots/kroc100.pn
+g> <./Plots/krod100.png> <./Plots/lin105.png> <./Plots/ch130.png> <./Plots/ch15
+0.png>] [9pdfTeX warning (ext4): destination with the same identifier (name{tab
+le.1}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.325 
+      ] [10]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 370.
+ [11] (./report.bbl) [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 414.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 414.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 107.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 414.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 414.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: 59448567A32AB848BF7DAFA24EBFD247;2284.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 414.
+ )
+(\end occurred inside a group at level 1)
 
-
-Package rerunfilecheck Warning: File `report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: 566B6C477CF73511F854A41C6F1494D0;89
-(rerunfilecheck)             After:  185B30518A7E12747A8904CDDC8C7C5D;657.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
- ) 
+### simple group (level 1) entered at line 173 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 31644 strings out of 492616
- 577663 string characters out of 6132767
- 672834 words of memory out of 5000000
- 35096 multiletter control sequences out of 15000+600000
- 541469 words of font info for 60 fonts, out of 8000000 for 9000
+ 31115 strings out of 492616
+ 565425 string characters out of 6132767
+ 659723 words of memory out of 5000000
+ 34469 multiletter control sequences out of 15000+600000
+ 543876 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,10n,65p,949b,502s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2018/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
-pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/201
-8/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2018/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (3 pages, 442167 bytes).
+ 55i,11n,65p,949b,720s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{https://github.com/nick-jhlee/CS454
+-TSP-Solver} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{https://en.wikipedia.org/wiki/3-opt} has been refer
+enced but does not exist, replaced by a fixed one
+
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2018/texmf-dist/font
+s/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmcsc10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmex10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pf
+b><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2018/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/couri
+er/ucrb8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on report.pdf (12 pages, 1826138 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 28 named destinations out of 1000 (max. 500000)
- 39 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 426 PDF objects out of 1000 (max. 8388607)
+ 361 compressed objects within 4 object streams
+ 83 named destinations out of 1000 (max. 500000)
+ 352 words of extra memory for PDF output out of 10000 (max. 10000000)
 
